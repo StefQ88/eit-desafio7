@@ -1,0 +1,312 @@
+:root {
+  /* Fondos */
+  --bg-main: #1f2023;
+  --bg-base-light : #d6e2de; /*fondo claro base*/
+  --bg-base-focus: #a6c1b9;
+  --bg-title: #4d6d63;
+  --bg-focus: #4d6d63;
+  --bg-legend: #2b3d37;
+
+  /* Texto */
+  --text-main: #e8eaed;
+  --white: #ffffff;
+  --button-text: #758381;
+  --button-text-hover: #4c5a59;
+  --text-placeholder:#bdd0ca;
+  --text-select:#96acaa;
+
+  /* Inputs */
+  --inputs-bg: #ffffff;
+  --inputs-border: #829b93;
+  --inputs-border-focus: #262c2a;
+  --inputs-bg-focus: #4d6d63;
+
+  /* Botones */
+  --button-bg: #2b3d37;
+  --button-border: #33413f;
+  --button-hover: #d6e2de;
+
+  /* Otros */
+  --form-shadow: rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh; /* altura minima de la pantalla*/
+  background-color: var(--bg-main); /*fondo oscuro */
+  font-family: "Poppins", sans-serif;
+}
+
+.main-content {
+  max-width: 700px; /* limita el ancho*/
+  margin: 2rem auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+.title-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.title-wrapper h1 {
+  font-size: 2.5rem;
+  color: var(--text-main);
+  font-weight: 800;
+  margin: 0;
+}
+
+.title-icon {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+/* Pseudo- elemento -> crea la linea superior */
+.title-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -1rem; /* mueve la linea hacia arriba */
+  left: 0; /* mismo lugar que el borde h1 */
+  width: 100%;
+  height: 1rem;
+  background-color: var(--bg-title); /* Color de la línea */
+  clip-path: polygon(
+    15px 100%,
+    /* recorta parte inferior izquierda */ 0 0,
+    100% 0,
+    /* va a esquina superior derecha */ calc(100% - 15px) 100%
+      /* recorta la parte inferior derecha */
+  );
+}
+
+/* Pseudo- elemento -> crea la linea inferior */
+.title-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  width: 100%;
+  height: 1rem;
+  background-color: var(--bg-title);
+  clip-path: polygon(0 100%, 15px 0, calc(100% - 15px) 0, 100% 100%);
+}
+
+.form-container {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 2rem;
+}
+
+  
+fieldset {
+  background-color: var( --bg-base-light); /*fondo claro base*/
+  border: 1px solid var(--bg-decoration);
+  padding: 1rem;
+  border-radius: 2px;
+  width: 100%;
+  position: relative;
+}
+
+fieldset:focus-within {
+  background-color: var(--bg-base-focus);
+}
+
+/* Legend POSICIONADO sobre el borde izquierdo */
+legend {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  transform: translateY(-50%); /* Sube el legend para que quede encima del borde */
+  background-color: var(--bg-legend); /* igual al fondo del body */
+  color: var(--white);
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 6px;
+  min-width: max-content;
+}
+
+.legend-icon {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  display: inline-block;
+}
+
+.fields-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 auto; /* Centra el wrapper dentro del fieldset */
+  width: 100%;
+  padding: 1rem 5rem ;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  /* border: 1px solid var(--bg-decoration); */
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+input:focus,
+textarea:focus {
+  background-color: var(--bg-focus);
+}
+
+
+
+select:invalid {
+  color: var( --text-select);
+}
+
+input::placeholder {
+  text-align: right;
+  color: var(--text-placeholder);
+  font-size: 1rem;
+}
+
+/* Radio */
+.radio-group label {
+  display: flex;                  
+  align-items: center;
+  gap: 0.25rem;        
+}
+  
+.radio-group {
+  display: flex;                  
+  justify-content: center;        
+  gap: 1.5rem;                     
+  flex-wrap: wrap;       /* Permite bajar a otra línea si no entra */
+  width: 100%;           /* Ocupa todo el ancho disponible */
+}
+
+.activity-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+  
+}
+
+.checkbox-group {
+  display: flex;                                      
+  flex-wrap: wrap; 
+  gap: 1rem;           
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+#activities-intro {
+  margin-top: 1rem;
+}
+
+.activity-section {
+  margin-bottom: 1rem;
+}
+
+.terms-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.terms-wrapper label {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: 0.5rem;
+  color: var(--white);
+}
+
+.terms-wrapper p {
+  color: white;
+}
+
+/* Estilo boton*/
+button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--button-bg);
+  border: 2px solid var(--button-bg);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 300;
+  border-radius: 1px;
+  margin-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.button-style {
+  align-self: flex-start;
+  margin-bottom: 1rem;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+section {
+  margin-bottom: 3rem; /* espacio entre secciones */
+}
+
+.separator-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 3rem 0;
+}
+
+
+.separator-dots span {
+  width: 15px;
+  height: 15px;
+  background-color: var(--bg-section-focus);
+  border-radius: 50%;
+  display: inline-block;
+
+}
+
+
+
+
+
+
+
