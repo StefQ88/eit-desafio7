@@ -1,45 +1,32 @@
 :root {
-  /* Fondos */
-  --bg-main: #1f2023;
-  --bg-base-light : #d6e2de; /*fondo claro base*/
-  --bg-base-focus: #a6c1b9;
-  --bg-title: #4d6d63;
-  --bg-focus: #4d6d63;
-  --bg-legend: #2b3d37;
+  --color-primary: #4d6d63; /* Verde fuerte → títulos, botones */
+  --color-secondary: #a6c1b9; /* Verde medio → fondos de secciones en focus */
+  --color-tertiary: #d6e2de; /* Fondo claro → base de fieldsets */
 
-  /* Texto */
-  --text-main: #e8eaed;
-  --white: #ffffff;
-  --button-text: #758381;
-  --button-text-hover: #4c5a59;
-  --text-placeholder:#bdd0ca;
-  --text-select:#96acaa;
+  --color-dark-green: #2b3d37; /* Verde osucuro */
 
-  /* Inputs */
-  --inputs-bg: #ffffff;
-  --inputs-border: #829b93;
-  --inputs-border-focus: #262c2a;
-  --inputs-bg-focus: #4d6d63;
+  --bg-main: #1f2023; /* Fondo general */
+  --color-text: #e8eaed; /* Texto titulo, legend y botones */
+  --color-text-button:#8da89c;
+  --color-inputs: #ffffff;
+  
+  --color-text-placeholder:#bbcdcc;
+  --color-text-select:#abb7b1;
 
-  /* Botones */
-  --button-bg: #2b3d37;
-  --button-border: #33413f;
-  --button-hover: #d6e2de;
-
-  /* Otros */
-  --form-shadow: rgba(0, 0, 0, 0.3);
+  --font-family-primary: 'Poppins', sans-serif;
+  --font-family-secondary:'Roboto', sans-serif;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: var(--font-family-secondary);
 }
 
 body {
   min-height: 100vh; /* altura minima de la pantalla*/
   background-color: var(--bg-main); /*fondo oscuro */
-  font-family: "Poppins", sans-serif;
 }
 
 .main-content {
@@ -49,9 +36,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
 }
-
 
 .title-wrapper {
   position: relative;
@@ -66,7 +52,8 @@ body {
 
 .title-wrapper h1 {
   font-size: 2.5rem;
-  color: var(--text-main);
+  color: var(--color-text);
+  font-family: var(--font-family-primary);
   font-weight: 800;
   margin: 0;
 }
@@ -84,7 +71,7 @@ body {
   left: 0; /* mismo lugar que el borde h1 */
   width: 100%;
   height: 1rem;
-  background-color: var(--bg-title); /* Color de la línea */
+  background-color: var(--color-primary); /* Color de la línea */
   clip-path: polygon(
     15px 100%,
     /* recorta parte inferior izquierda */ 0 0,
@@ -102,7 +89,7 @@ body {
   left: 0;
   width: 100%;
   height: 1rem;
-  background-color: var(--bg-title);
+  background-color: var(--color-primary);
   clip-path: polygon(0 100%, 15px 0, calc(100% - 15px) 0, 100% 100%);
 }
 
@@ -112,10 +99,10 @@ body {
   margin-top: 2rem;
 }
 
-  
 fieldset {
-  background-color: var( --bg-base-light); /*fondo claro base*/
-  border: 1px solid var(--bg-decoration);
+  background-color: var(--color-tertiary); /*fondo claro base*/
+  border: 2px solid var( --color-primary);
+  font-size: 1rem;
   padding: 1rem;
   border-radius: 2px;
   width: 100%;
@@ -123,28 +110,35 @@ fieldset {
 }
 
 fieldset:focus-within {
-  background-color: var(--bg-base-focus);
+  background-color: var(--color-secondary);
 }
 
 /* Legend POSICIONADO sobre el borde izquierdo */
 legend {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   position: absolute;
   top: 0;
   left: 1rem;
-  transform: translateY(-50%); /* Sube el legend para que quede encima del borde */
-  background-color: var(--bg-legend); /* igual al fondo del body */
-  color: var(--white);
+  transform: translateY(
+    -50%
+  ); /* Sube el legend para que quede encima del borde */
+  background-color: var(--color-primary); /* igual al fondo del body */
+  color: var(--color-text);
   font-weight: 600;
   text-transform: uppercase;
   text-align: center;
   border-radius: 6px;
-  min-width: max-content;
+}
+
+fieldset:focus-within legend {
+  background-color: var(--color-dark-green);
+  border-color: var(--color-dark-green);
 }
 
 .legend-icon {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   padding: 0.5rem;
   display: inline-block;
 }
@@ -156,7 +150,24 @@ legend {
   gap: 1rem;
   margin: 0 auto; /* Centra el wrapper dentro del fieldset */
   width: 100%;
-  padding: 1rem 5rem ;
+  padding: 0.5rem 4rem;
+}
+
+.fields-wrapper p {
+  width: 100%;
+  margin: 0;
+
+}
+
+label , textarea {
+  display: block;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+input {
+  direction: rtl;
+  text-align: right;
 }
 
 input,
@@ -165,41 +176,52 @@ textarea {
   width: 100%;
   padding: 0.5rem;
   border: none;
-  /* border: 1px solid var(--bg-decoration); */
-  border-radius: 2px;
+  border: 1px solid var(--color-secondary);
+  border-radius: 3px;
   box-sizing: border-box;
+  caret-color: var(--color-inputs);
+  color: var(--color-text-select);
+  font-size: 1rem;
+ 
 }
+
 
 input:focus,
 textarea:focus {
-  background-color: var(--bg-focus);
+  background-color: var(--color-primary);
+  outline: none;
+  border: 2px solid var(--bg-main);
+  border-radius: 3px;
+  color: var(--color-inputs);
 }
 
-
+textarea {
+  resize: vertical;
+}
 
 select:invalid {
-  color: var( --text-select);
+  color: var( --color-text-select);
 }
 
 input::placeholder {
   text-align: right;
-  color: var(--text-placeholder);
+  color: var(--color-text-placeholder);
   font-size: 1rem;
 }
 
 /* Radio */
 .radio-group label {
-  display: flex;                  
+  display: flex;
   align-items: center;
-  gap: 0.25rem;        
+  gap: 0.25rem;
 }
-  
+
 .radio-group {
-  display: flex;                  
-  justify-content: center;        
-  gap: 1.5rem;                     
-  flex-wrap: wrap;       /* Permite bajar a otra línea si no entra */
-  width: 100%;           /* Ocupa todo el ancho disponible */
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap; /* Permite bajar a otra línea si no entra */
+  width: 100%; /* Ocupa todo el ancho disponible */
 }
 
 .activity-wrapper {
@@ -209,13 +231,12 @@ input::placeholder {
   gap: 1rem;
   padding: 0.5rem;
   width: 100%;
-  
 }
 
 .checkbox-group {
-  display: flex;                                      
-  flex-wrap: wrap; 
-  gap: 1rem;           
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .checkbox-group label {
@@ -236,7 +257,10 @@ input::placeholder {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.5rem;
+}
+
+#required-field {
+  margin-top: 1rem;
 }
 
 .terms-wrapper label {
@@ -244,11 +268,18 @@ input::placeholder {
   align-items: center;
   white-space: nowrap;
   gap: 0.5rem;
-  color: var(--white);
+  color: var(--color-text);
+}
+
+.small-label {
+  font-size: 0.80rem;
+  color: var(--color-text);
 }
 
 .terms-wrapper p {
-  color: white;
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 12px;
 }
 
 /* Estilo boton*/
@@ -257,33 +288,33 @@ button {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: var(--button-bg);
-  border: 2px solid var(--button-bg);
-  color: var(--white);
+  background-color: var(--color-dark-green);
+  border: 1px solid var(--color-primary);
+  color: var(--color-text-button);
   padding: 0.5rem 1rem;
+  border-radius: 3px;
   font-size: 1rem;
-  font-weight: 300;
-  border-radius: 1px;
-  margin-bottom: 1rem;
-  margin-bottom: 1rem;
+}
+
+button:hover {
+  background-color: var(--color-tertiary);
+  cursor: pointer;
 }
 
 .button-style {
   align-self: flex-start;
-  margin-bottom: 1rem;
 }
 
 .button-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   flex-wrap: wrap;
-  margin-top: 2rem;
 }
 
 section {
-  margin-bottom: 3rem; /* espacio entre secciones */
+  margin-bottom: 1rem; /* espacio entre secciones */
 }
 
 .separator-dots {
@@ -294,19 +325,10 @@ section {
   margin: 3rem 0;
 }
 
-
 .separator-dots span {
   width: 15px;
   height: 15px;
-  background-color: var(--bg-section-focus);
+  background-color: var(--color-secondary);
   border-radius: 50%;
   display: inline-block;
-
 }
-
-
-
-
-
-
-

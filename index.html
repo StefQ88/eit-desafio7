@@ -2,21 +2,20 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Afiliación</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilos.css" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.google.com/?query=Roboto" />
 </head>
 
 <body>
     <main class="main-content">
         <button class="button-style">Cambiar estilo</button>
-        
         <div class="title-wrapper">
-            <h1>Vení al Gym!</h1>
-            <span class="title-icon">💪🏻</span>
+            <h1>Vení al Gym!<span class="title-icon">💪🏻</span></h1>
         </div>
 
         <form class="form-container" id="affiliation-form" autocomplete="on">
@@ -29,34 +28,40 @@
                     </legend>
 
                     <div class="fields-wrapper">
-                        <label for="first-name">Nombre:*</label>
-                        <input type="text" id="first-name" name="firstName" required>
-    
-                        <label for="first-surname">Apellido:*</label>
-                        <input type="text" id="first-surname" name="firstSurname" required>
-    
-                        <label for="document">Documento:*</label>
-                        <input type="text" id="document" name="document" required>
-    
-                        <label for="nationality">Nacionalidad:*</label>
-                        <select id="nationality" name="nationality" required>
-                            <option value="" disabled selected>- Seleccionar -</option>
-                            <option value="argentina">Argentina</option>
-                            <option value="brasilena">Brasileña</option>
-                            <option value="uruguaya">Uruguaya</option>
-                            <option value="otra">Otra</option>
-                        </select>
-    
-                        <label for="about-you">Contanos un poco de vos...</label>
-                        <textarea id="about-you" name="aboutYou" rows="5"></textarea>
+                        <p>
+                            <label for="first-name">Nombre:*</label>
+                            <input type="text" id="first-name" name="firstName" required />
+                        </p>
+                        <p>
+                            <label for="first-surname">Apellido:*</label>
+                            <input type="text" id="first-surname" name="firstSurname" required />
+                        </p>
+                        <p>
+                            <label for="document">Documento:*</label>
+                            <input type="text" id="document" name="document" required />
+                        </p>
+                        <p>
+                            <label for="nationality">Nacionalidad:*</label>
+                            <select id="nationality" name="nationality" required>
+                                <option value="" disabled selected>- Seleccionar -</option>
+                                <option value="argentina">Argentina</option>
+                                <option value="brasilena">Brasileña</option>
+                                <option value="uruguaya">Uruguaya</option>
+                                <option value="otra">Otra</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="about-you">Contanos un poco de vos...</label>
+                            <textarea id="about-you" name="aboutYou"></textarea>
+                        </p>
                     </div>
 
                     <div class="fields-wrapper">
                         <label>Sexo:*</label>
                         <div class="radio-group">
-                            <label><input type="radio" name="gender" value="femenino">Femenino</label>
-                            <label><input type="radio" name="gender" value="masculino">Masculino</label>
-                            <label><input type="radio" name="gender" value="otro">Otro</label>
+                            <label><input type="radio" name="gender" value="femenino" />Femenino</label>
+                            <label><input type="radio" name="gender" value="masculino" />Masculino</label>
+                            <label><input type="radio" name="gender" value="otro" />Otro</label>
                         </div>
                     </div>
                 </fieldset>
@@ -85,14 +90,18 @@
                     </legend>
 
                     <div class="fields-wrapper">
-                        <label for="phone">Teléfono:</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Código de área y número">
-                        <label for="email">Dirección de correo electrónico:*</label>
-                        <input type="email" id="email" name="email" required placeholder="Ej: mail@gmail.com">
+                        <p>
+                            <label for="phone">Teléfono:</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Código de área y número" />
+                        </p>
+                        <p>
+                            <label for="email">Dirección de correo electrónico:*</label>
+                            <input type="email" id="email" name="email" required pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$"
+                                placeholder="Ej: mail@gmail.com" />
+                        </p>
                     </div>
                 </fieldset>
             </section>
-
             <div class="separator-dots">
                 <span></span>
                 <span></span>
@@ -116,37 +125,42 @@
                     </legend>
 
                     <div class="activity-wrapper">
-                        <p id="activities-intro">Por favor, indicá cuáles actividades te interesan.</p>
-    
+                        <p id="activities-intro">
+                            Por favor, indicá cuáles actividades te interesan.
+                        </p>
+
                         <p>Sede Palermo:</p>
                         <div class="checkbox-group">
-                            <label><input type="checkbox" name="palermo[]" value="basquet">Básquet</label>
-                            <label><input type="checkbox" name="palermo[]" value="boxeo">Boxeo</label>
-                            <label><input type="checkbox" name="palermo[]" value="futbol">Fútbol</label>
-                            <label><input type="checkbox" name="palermo[]" value="tenis">Tenis</label>
+                            <label><input type="checkbox" name="palermo[]" value="basquet" />Básquet</label>
+                            <label><input type="checkbox" name="palermo[]" value="boxeo" />Boxeo</label>
+                            <label><input type="checkbox" name="palermo[]" value="futbol" />Fútbol</label>
+                            <label><input type="checkbox" name="palermo[]" value="tenis" />Tenis</label>
                         </div>
-    
+
                         <p>Sede Rosario:</p>
                         <div class="checkbox-group">
-                            <label><input type="checkbox" name="rosario[]" value="basquet">Básquet</label>
-                            <label><input type="checkbox" name="rosario[]" value="futbol">Fútbol</label>
-                            <label><input type="checkbox" name="rosario[]" value="ragby">Rugby</label>
-                            <label><input type="checkbox" name="rosario[]" value="voley">Voley</label>
+                            <label><input type="checkbox" name="rosario[]" value="basquet" />Básquet</label>
+                            <label><input type="checkbox" name="rosario[]" value="futbol" />Fútbol</label>
+                            <label><input type="checkbox" name="rosario[]" value="ragby" />Rugby</label>
+                            <label><input type="checkbox" name="rosario[]" value="voley" />Voley</label>
                         </div>
                     </div>
                 </fieldset>
             </section>
 
- 
-
             <section>
                 <div class="terms-wrapper">
-                    <label><input type="checkbox" name="terms" required />Acepto las condiciones*</label>
-                    <label><input type="checkbox" name="news" />Deseo recibir novedades</label>
-                    <p>*: campo obligatorio.</p>
+                    <p>
+                        <label class="small-label"><input type="checkbox" name="terms" required />Acepto las
+                            condiciones*</label>
+                    </p>
+                    <p>
+                        <label class="small-label"><input type="checkbox" name="news" />Deseo recibir
+                            novedades</label>
+                    </p>
+                    <p id="required-field">*: campo obligatorio.</p>
                 </div>
             </section>
-
 
             <section>
                 <div class="button-wrapper">
@@ -154,17 +168,7 @@
                     <button type="reset" class="btn-style">Restablecer</button>
                 </div>
             </section>
-
-
         </form>
-
-
-
-
-
-
-
-
     </main>
 </body>
 
