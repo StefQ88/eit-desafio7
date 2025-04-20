@@ -1,0 +1,15 @@
+:root {
+    --color-primary: #e6c01f; /* Amarillo fuerte →  */
+    --color-secondary: #a28811; /* Amarillo medio →  */
+    --color-tertiary: #d9c71c; /* Amarillo claro → */
+  
+    --color-dark-yellow: #2b2507; /* Verde osucuro */
+  
+    --bg-main: #101010; /* Fondo general */
+    --color-text: #f1f1f1; /* Texto titulo*/
+
+    --color-inputs: #ffffff;
+    
+    --font-family-primary: 'Poppins', sans-serif;
+    --font-family-secondary:'Roboto', sans-serif;
+  }
