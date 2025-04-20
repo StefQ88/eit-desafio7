@@ -47,7 +47,7 @@ body {
   align-items: center;
   gap: 0;
   width: 100%;
-  margin: 2rem 0;
+  margin: 1.5rem 0;
 }
 
 .title-wrapper h1 {
@@ -73,11 +73,10 @@ body {
   height: 1rem;
   background-color: var(--color-primary); /* Color de la línea */
   clip-path: polygon(
-    15px 100%,
-    /* recorta parte inferior izquierda */ 0 0,
-    100% 0,
-    /* va a esquina superior derecha */ calc(100% - 15px) 100%
-      /* recorta la parte inferior derecha */
+    15px 100%, 
+    0 0,
+    100% 0, 
+    calc(100% - 15px) 100% 
   );
 }
 
@@ -159,16 +158,6 @@ fieldset:focus-within legend {
 
 }
 
-label , textarea {
-  display: block;
-  text-align: center;
-  margin-top: 0.5rem;
-}
-
-input {
-  direction: rtl;
-  text-align: right;
-}
 
 input,
 select,
@@ -182,7 +171,23 @@ textarea {
   caret-color: var(--color-inputs);
   color: var(--color-text-select);
   font-size: 1rem;
- 
+  
+}
+
+label , textarea {
+  display: block;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+input {
+  direction: rtl;
+  text-align: right;
+}
+
+textarea {
+  resize: vertical;
+  text-align: right;
 }
 
 
@@ -195,9 +200,6 @@ textarea:focus {
   color: var(--color-inputs);
 }
 
-textarea {
-  resize: vertical;
-}
 
 select:invalid {
   color: var( --color-text-select);
@@ -247,6 +249,7 @@ input::placeholder {
 
 #activities-intro {
   margin-top: 1rem;
+  font-size: 0.90rem;
 }
 
 .activity-section {
@@ -313,21 +316,17 @@ button:hover {
   flex-wrap: wrap;
 }
 
-section {
-  margin-bottom: 1rem; /* espacio entre secciones */
-}
-
 .separator-dots {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  margin: 3rem 0;
+  gap: 0.75rem;
+  margin: 1.3rem 0 2.2rem 0;
 }
 
 .separator-dots span {
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
   background-color: var(--color-secondary);
   border-radius: 50%;
   display: inline-block;
