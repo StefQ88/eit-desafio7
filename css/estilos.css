@@ -252,11 +252,11 @@ input::placeholder {
   font-size: 0.90rem;
 }
 
-.activity-section {
+.section-activities {
   margin-bottom: 1rem;
 }
 
-.terms-wrapper {
+.section-terms {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -266,7 +266,7 @@ input::placeholder {
   margin-top: 1rem;
 }
 
-.terms-wrapper label {
+.section-terms label {
   display: inline-flex;
   align-items: center;
   white-space: nowrap;
@@ -279,7 +279,7 @@ input::placeholder {
   color: var(--color-text);
 }
 
-.terms-wrapper p {
+.section-terms p {
   color: var(--color-text);
   font-weight: 600;
   font-size: 12px;
