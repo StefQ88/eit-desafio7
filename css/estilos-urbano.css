@@ -1,10 +1,10 @@
 :root {
 
 
-    --color-primary: #1e1e1e;
-    --color-secondary: #2e2e2e;
-    --color-tertiary: #b0b0b0;
-    --color-highlight: #e6c01f;
+    --color-primary: #1e1e1e; /* Gris oscuro */
+    --color-secondary: #2e2e2e; 
+    --color-tertiary: #b0b0b0; /* Grisclaro*/
+    --color-highlight: #e6c01f; /* Amarillo */
     --text-light: #f0f0f0;
     --text-dark: #1a1a1a;
 

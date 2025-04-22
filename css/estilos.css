@@ -7,8 +7,8 @@
 
   --bg-main: #1f2023; /* Fondo general */
   --color-text: #e8eaed; /* Texto titulo, legend y botones */
-  --color-text-button:#8da89c;
-  --color-inputs: #ffffff;
+  --color-text-button:#8da89c; /* Texto del boton*/
+  
   
   --color-text-placeholder:#bbcdcc;
   --color-text-select:#abb7b1;
@@ -25,8 +25,8 @@
 }
 
 body {
-  min-height: 100vh; /* altura minima de la pantalla*/
-  background-color: var(--bg-main); /*fondo oscuro */
+  min-height: 100vh; 
+  background-color: var(--bg-main); 
 }
 
 .main-content {
@@ -71,7 +71,7 @@ body {
   left: 0; /* mismo lugar que el borde h1 */
   width: 100%;
   height: 1rem;
-  background-color: var(--color-primary); /* Color de la línea */
+  background-color: var(--color-primary); 
   clip-path: polygon(
     15px 100%, 
     0 0,
@@ -99,7 +99,7 @@ body {
 }
 
 fieldset {
-  background-color: var(--color-tertiary); /*fondo claro base*/
+  background-color: var(--color-tertiary); 
   border: 2px solid var( --color-primary);
   font-size: 1rem;
   padding: 1rem;
@@ -123,7 +123,7 @@ legend {
   transform: translateY(
     -50%
   ); /* Sube el legend para que quede encima del borde */
-  background-color: var(--color-primary); /* igual al fondo del body */
+  background-color: var(--color-primary); 
   color: var(--color-text);
   font-weight: 600;
   text-transform: uppercase;
@@ -147,7 +147,7 @@ fieldset:focus-within legend {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  margin: 0 auto; /* Centra el wrapper dentro del fieldset */
+  margin: 0 auto; 
   width: 100%;
   padding: 0.5rem 4rem;
 }
@@ -222,8 +222,8 @@ input::placeholder {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  flex-wrap: wrap; /* Permite bajar a otra línea si no entra */
-  width: 100%; /* Ocupa todo el ancho disponible */
+  flex-wrap: wrap; 
+  width: 100%; 
 }
 
 .activity-wrapper {
