@@ -8,22 +8,25 @@
     <link rel="stylesheet" href="css/estilos.css" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" />
-    <link rel="stylesheet" href="https://fonts.google.com/?query=Roboto" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
 </head>
 
 <body>
     <main class="main-content">
         <button class="button-style">Cambiar estilo</button>
+
         <div class="title-wrapper">
             <h1>Vení al Gym!<span class="title-icon">💪🏻</span></h1>
         </div>
 
         <form class="form-container" id="affiliation-form" autocomplete="on">
+
+             <!-- DATOS PERSONALES -->
             <section class="section-personal">
                 <fieldset>
                     <legend>
                         <span class="legend-icon">🙋‍♂️</span>
-                        <span class="legend-text">Datos Personales</span>
+                        <span class="legend-text">Datos Personales</span> 
                         <span class="legend-icon">👀</span>
                     </legend>
 
@@ -45,7 +48,7 @@
                             <select id="nationality" name="nationality" required>
                                 <option value="" disabled selected>- Seleccionar -</option>
                                 <option value="argentina">Argentina</option>
-                                <option value="brasilena">Brasileña</option>
+                                <option value="brasilena">Brasileña</option> 
                                 <option value="uruguaya">Uruguaya</option>
                                 <option value="otra">Otra</option>
                             </select>
@@ -68,86 +71,71 @@
             </section>
 
             <div class="separator-dots">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
             </div>
 
-            <section class="section-contact">
-                <fieldset>
-                    <legend>
-                        <span class="legend-icon">📱</span>
-                        <span class="legend-text">Datos de Contacto</span>
-                        <span class="legend-icon">✉️</span>
-                    </legend>
+            <!-- CONTACTO Y ACTIVIDAD -->
+            <div class="content-wrapper">
+                <section class="section-contact">
+                    <fieldset>
+                        <legend>
+                            <span class="legend-icon">📱</span>
+                            <span class="legend-text">Datos de Contacto</span>
+                            <span class="legend-icon">✉️</span>
+                        </legend>
 
-                    <div class="fields-wrapper">
-                        <p>
-                            <label for="phone">Teléfono:</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Código de área y número" />
-                        </p>
-                        <p>
-                            <label for="email">Dirección de correo electrónico:*</label>
-                            <input type="email" id="email" name="email" required pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$"
-                                placeholder="Ej: mail@gmail.com" />
-                        </p>
-                    </div>
-                </fieldset>
-            </section>
+                        <div class="fields-wrapper">
+                            <p>
+                                <label for="phone">Teléfono:</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Código de área y número" />
+                            </p>
+                            <p>
+                                <label for="email">Dirección de correo electrónico:*</label>
+                                <input type="email" id="email" name="email" required
+                                    pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" placeholder="Ej: mail@gmail.com" />
+                            </p>
+                        </div>
+                    </fieldset>
+                </section>
 
-            <div class="separator-dots">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+                <div class="separator-dots">
+                    <span></span><span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+
+                <section class="section-activities">
+                    <fieldset>
+                        <legend>
+                            <span class="legend-icon">🚴</span>
+                            <span class="legend-text">Actividades</span>
+                            <span class="legend-icon">🤸‍♂️</span>
+                        </legend>
+
+                        <div class="activity-wrapper">
+                            <p id="activities-intro">
+                                Por favor, indicá cuáles actividades te interesan.
+                            </p>
+
+                            <p>Sede Palermo:</p>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="palermo[]" value="basquet" />Básquet</label>
+                                <label><input type="checkbox" name="palermo[]" value="boxeo" />Boxeo</label>
+                                <label><input type="checkbox" name="palermo[]" value="futbol" />Fútbol</label>
+                                <label><input type="checkbox" name="palermo[]" value="tenis" />Tenis</label>
+                            </div>
+
+                            <p>Sede Rosario:</p>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="rosario[]" value="basquet" />Básquet</label>
+                                <label><input type="checkbox" name="rosario[]" value="futbol" />Fútbol</label>
+                                <label><input type="checkbox" name="rosario[]" value="ragby" />Rugby</label>
+                                <label><input type="checkbox" name="rosario[]" value="voley" />Voley</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </section>
             </div>
-
-            <section class="section-activities">
-                <fieldset>
-                    <legend>
-                        <span class="legend-icon">🚴</span>
-                        <span class="legend-text">Actividades</span>
-                        <span class="legend-icon">🤸‍♂️</span>
-                    </legend>
-
-                    <div class="activity-wrapper">
-                        <p id="activities-intro">
-                            Por favor, indicá cuáles actividades te interesan.
-                        </p>
-
-                        <p>Sede Palermo:</p>
-                        <div class="checkbox-group">
-                            <label><input type="checkbox" name="palermo[]" value="basquet" />Básquet</label>
-                            <label><input type="checkbox" name="palermo[]" value="boxeo" />Boxeo</label>
-                            <label><input type="checkbox" name="palermo[]" value="futbol" />Fútbol</label>
-                            <label><input type="checkbox" name="palermo[]" value="tenis" />Tenis</label>
-                        </div>
-
-                        <p>Sede Rosario:</p>
-                        <div class="checkbox-group">
-                            <label><input type="checkbox" name="rosario[]" value="basquet" />Básquet</label>
-                            <label><input type="checkbox" name="rosario[]" value="futbol" />Fútbol</label>
-                            <label><input type="checkbox" name="rosario[]" value="ragby" />Rugby</label>
-                            <label><input type="checkbox" name="rosario[]" value="voley" />Voley</label>
-                        </div>
-                    </div>
-                </fieldset>
-            </section>
 
             <section>
                 <div class="section-terms">
@@ -165,8 +153,8 @@
 
             <section class="section-buttons">
                 <div class="button-wrapper">
-                    <button type="submit" class="btn-style">Iniciar afiliación</button>
-                    <button type="reset" class="btn-style">Restablecer</button>
+                    <button type="submit" class="button-style">Iniciar afiliación</button>
+                    <button type="reset" class="button-style">Restablecer</button>
                 </div>
             </section>
         </form>
